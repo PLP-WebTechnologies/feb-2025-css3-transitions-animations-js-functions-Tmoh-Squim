@@ -1,0 +1,162 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.animated-button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+    display: block; /* Make button full width on small screens */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.animated-button:hover {
+    background-color: #0056b3;
+}
+
+.animated-image-container {
+    width: 100%; /* Make responsive */
+    max-width: 200px;
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px auto; /* Center */
+    overflow: hidden;
+}
+
+.animated-image {
+    display: block; /* Remove extra space below image */
+    width: 100%;
+    height: auto;
+    background-color: #ccc;
+    background-image: url('https://via.placeholder.com/200');
+    background-size: cover;
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.1); opacity: 1; }
+}
+
+.slide-in {
+    animation: slideInAnimation 0.5s ease-out forwards;
+}
+
+.slide-out {
+    animation: slideOutAnimation 0.5s ease-in forwards;
+}
+
+@keyframes slideInAnimation {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutAnimation {
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(-100%); opacity: 0; }
+}
+
+#settings-panel {
+    margin-top: 30px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#settings-panel h2 {
+    margin-top: 0;
+}
+
+.preference-group {
+    margin-bottom: 15px;
+}
+
+.preference-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.preference-group input[type="text"],
+.preference-group input[type="email"],
+.preference-group select {
+    width: calc(100% - 12px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#save-preference {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#save-preference:hover {
+    background-color: #1e7e34;
+}
+
+#animation-trigger-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 15px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#animation-trigger-button:hover {
+    background-color: #0056b3;
+}
+
+#animated-text {
+    margin-top: 20px;
+    font-size: 1.2em;
+    opacity: 0;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .animated-button,
+    #animation-trigger-button {
+        width: auto;
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .animated-image-container {
+        margin: 20px;
+        float: right; /* Example layout on larger screens */
+    }
+
+    #settings-panel {
+        overflow: auto; /* Handle potential wider content */
+    }
+}
